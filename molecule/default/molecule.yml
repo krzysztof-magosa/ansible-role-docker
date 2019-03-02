@@ -33,7 +33,7 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
   - name: ${TOX_ENVNAME}-ubuntu
-    image: ubuntu:xenial
+    image: ubuntu:bionic
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true

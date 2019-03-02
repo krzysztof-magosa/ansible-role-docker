@@ -6,12 +6,12 @@
 Installs and configures Docker
 
 ## Requirements
-* Ansible 2.5
+* Ansible (tested on 2.5, 2.6 and 2.7)
 
 ## Supported systems
 * CentOS (tested on 7)
 * Debian (tested on Stretch)
-* Ubuntu (tested on Xenial)
+* Ubuntu (tested on Bionic)
 
 ## Variables
 See [defaults](defaults/main.yml).
