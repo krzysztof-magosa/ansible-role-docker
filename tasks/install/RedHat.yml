@@ -1,0 +1,12 @@
+- name: Configure repository
+  yum_repository:
+    name: docker
+    description: Docker repository
+    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
+    gpgkey: https://download.docker.com/linux/centos/gpg
+
+- name: Install docker and dependencies
+  yum:
+    name:
+      - "{{ docker_pkg }}{% if docker_version %}-{{ docker_version }}{% endif %}"
+      - python-virtualenv

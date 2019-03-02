@@ -1,47 +1,4 @@
-- name: Configure repository
-  yum_repository:
-    name: docker
-    description: Docker repository
-    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
-    gpgkey: https://download.docker.com/linux/centos/gpg
-  when: ansible_facts.os_family == "RedHat"
-
-- name: Install docker and dependencies
-  yum:
-    name:
-      - "{{ docker_pkg }}{% if docker_version %}-{{ docker_version }}{% endif %}"
-      - python-virtualenv
-  when: ansible_facts.os_family == "RedHat"
-
-#
-
-- name: Install https method
-  apt:
-    name: apt-transport-https
-  when: ansible_facts.os_family == "Debian"
-
-- name: Add APT key
-  apt_key:
-    url: https://download.docker.com/linux/{{ ansible_facts.distribution | lower }}/gpg
-    id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
-    state: present
-  when: ansible_facts.os_family == "Debian"
-
-- name: Configure repository
-  apt_repository:
-    filename: docker
-    repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_facts.distribution | lower }} {{ ansible_facts.distribution_release }} stable"
-    update_cache: true
-  when: ansible_facts.os_family == "Debian"
-
-- name: Install docker and dependencies
-  apt:
-    name:
-      - "{{ docker_pkg }}{% if docker_version %}={{ docker_version }}{% endif %}"
-      - virtualenv
-  when: ansible_facts.os_family == "Debian"
-
-#
+- include_tasks: "install/{{ ansible_facts.os_family }}.yml"
 
 - name: Install docker python modules
   pip:
@@ -49,4 +6,3 @@
       - docker
       - docker-compose
     virtualenv: "{{ docker_virtualenv_path }}"
-
