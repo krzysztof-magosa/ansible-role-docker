@@ -19,3 +19,6 @@ env:
 
 script:
   - tox -e ${TOX_ENV}
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
