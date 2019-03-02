@@ -1,16 +1,21 @@
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+sudo: required
+language: python
+
 services:
   - docker
 
+install:
+  - pip install tox
+
 env:
-  - distribution: centos
-    version: 7
-    ansible_version: 2.6.3
-  - distribution: debian
-    version: stretch
-    ansible_version: 2.6.3
-  - distribution: ubuntu
-    version: xenial
-    ansible_version: 2.6.3
+  - TOX_ENV: py27-ansible25
+  - TOX_ENV: py27-ansible26
+  - TOX_ENV: py27-ansible27
 
 script:
-  - ./tests/test.sh
+  - tox -e ${TOX_ENV}

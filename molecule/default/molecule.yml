@@ -1,0 +1,44 @@
+driver:
+  name: docker
+lint:
+  name: yamllint
+  options:
+    config-file: .yamllint
+scenario:
+  name: default
+  test_sequence:
+    - lint
+    - destroy
+    # - dependency
+    - syntax
+    - create
+    # - prepare
+    - converge
+    - idempotence
+    # - side_effect
+    # - verify
+    - destroy
+platforms:
+  - name: ${TOX_ENVNAME}-centos
+    image: centos:7
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    command: /sbin/init
+    environment:
+      container: docker
+  - name: ${TOX_ENVNAME}-debian
+    image: debian:stretch
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+  - name: ${TOX_ENVNAME}-ubuntu
+    image: ubuntu:xenial
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+provisioner:
+  name: ansible
+  log: false
+  lint:
+    name: ansible-lint
