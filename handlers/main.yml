@@ -1,0 +1,13 @@
+- name: Reload docker
+  service:
+    name: docker
+    state: reloaded
+  listen: docker:reload
+  when: docker_enabled
+
+- name: Restart docker
+  service:
+    name: docker
+    state: restarted
+  listen: docker:restart
+  when: docker_enabled

@@ -1,0 +1,42 @@
+- import_tasks: variables.yml
+  tags:
+    - docker
+    - docker_variables
+    - docker_install
+    - docker_config
+    - docker_service
+    - docker_logins
+    - docker_containers
+
+- import_tasks: install.yml
+  tags:
+    - docker
+    - docker_install
+
+- import_tasks: config.yml
+  tags:
+    - docker
+    - docker_config
+
+- import_tasks: service.yml
+  tags:
+    - docker
+    - docker_service
+
+- import_tasks: logins.yml
+  tags:
+    - docker
+    - docker_logins
+  when: docker_enabled
+
+- import_tasks: services.yml
+  tags:
+    - docker
+    - docker_services
+  when: docker_enabled
+
+- import_tasks: containers.yml
+  tags:
+    - docker
+    - docker_containers
+  when: docker_enabled

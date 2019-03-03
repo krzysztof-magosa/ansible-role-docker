@@ -1,0 +1,18 @@
+galaxy_info:
+  author: "Krzysztof Magosa"
+  description: "Installs and configures Docker"
+  license: "MIT"
+  min_ansible_version: "2.5"
+  platforms:
+    - name: Debian
+      versions:
+        - stretch
+    - name: Ubuntu
+      versions:
+        - xenial
+    - name: EL
+      versions:
+        - 7
+  # galaxy_tags:
+  #   - tag_name
+  dependencies: []

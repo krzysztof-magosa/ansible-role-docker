@@ -1,0 +1,20 @@
+# Edition (ce - Community Edition, ee - Enterprise Edition)
+docker_edition: "ce"
+
+# Version to be installed
+docker_version: "{{ docker_default_version }}"
+
+# Whether to enable daemon
+docker_enabled: true
+
+# List of logins (https://docs.ansible.com/ansible/latest/modules/docker_login_module.html)
+docker_logins: []
+
+# List of services (https://docs.ansible.com/ansible/latest/modules/docker_service_module.html)
+docker_services: []
+
+# List of containers (https://docs.ansible.com/ansible/latest/modules/docker_container_module.html)
+docker_containers: []
+
+# Location of virtualenv used to install python modules
+docker_virtualenv_path: "/opt/docker-venv"

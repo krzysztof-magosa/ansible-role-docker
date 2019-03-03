@@ -1,0 +1,3 @@
+- name: Load system specific variables
+  include_vars:
+    file: "{{ ansible_facts.os_family }}.yml"
