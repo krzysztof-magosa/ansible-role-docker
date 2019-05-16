@@ -19,3 +19,5 @@
     tls_verify: "{{ item.tls_verify | default(omit) }}"
     username: "{{ item.username | default(omit) }}"
   loop: "{{ docker_logins }}"
+  vars:
+    ansible_python_interpreter: "{{ docker_virtualenv_path }}/bin/python"
