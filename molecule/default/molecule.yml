@@ -27,8 +27,13 @@ platforms:
     command: /sbin/init
     environment:
       container: docker
-  - name: ${TOX_ENVNAME}-debian
+  - name: ${TOX_ENVNAME}-debian-stretch
     image: debian:stretch
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+  - name: ${TOX_ENVNAME}-debian-buster
+    image: debian:buster
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
