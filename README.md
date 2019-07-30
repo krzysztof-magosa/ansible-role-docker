@@ -10,7 +10,7 @@ Installs and configures Docker
 
 ## Supported systems
 * CentOS (tested on 7)
-* Debian (tested on Stretch)
+* Debian (tested on Stretch and Buster)
 * Ubuntu (tested on Bionic)
 
 ## Variables

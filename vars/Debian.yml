@@ -1,1 +1,2 @@
 docker_default_version: ""
+docker_debian_release: "{% if ansible_facts.distribution_version == 'buster/sid' %}buster{% else %}{{ ansible_facts.distribution_release }}{% endif %}"
