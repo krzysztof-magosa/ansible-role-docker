@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: "docker"
   author: "Krzysztof Magosa"
   description: "Installs and configures Docker"
   license: "MIT"
