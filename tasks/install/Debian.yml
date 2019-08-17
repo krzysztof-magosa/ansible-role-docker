@@ -11,7 +11,7 @@
 - name: Configure repository
   apt_repository:
     filename: docker
-    repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_facts.distribution | lower }} {{ docker_debian_release | lower }} stable"
+    repo: "deb https://download.docker.com/linux/{{ ansible_facts.distribution | lower }} {{ docker_debian_release | lower }} stable"
     update_cache: true
 
 - name: Install docker and dependencies
