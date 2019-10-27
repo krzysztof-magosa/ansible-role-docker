@@ -16,5 +16,8 @@ docker_services: []
 # List of containers (https://docs.ansible.com/ansible/latest/modules/docker_container_module.html)
 docker_containers: []
 
+# List of networks (https://docs.ansible.com/ansible/latest/modules/docker_network_module.html)
+docker_networks: []
+
 # Location of virtualenv used to install python modules
 docker_virtualenv_path: "/opt/docker-venv"

@@ -29,6 +29,12 @@
     - docker_logins
   when: docker_enabled
 
+- import_tasks: networks.yml
+  tags:
+    - docker
+    - docker_networks
+  when: docker_enabled
+
 - import_tasks: services.yml
   tags:
     - docker
