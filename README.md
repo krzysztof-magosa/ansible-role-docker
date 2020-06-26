@@ -11,7 +11,7 @@ Installs and configures Docker
 ## Supported systems
 * CentOS (tested on 7)
 * Debian (tested on 9/Stretch and 10/Buster)
-* Ubuntu (tested on 18.04/Bionic)
+* Ubuntu (tested on 18.04/Bionic and 20.04/Focal Fossa)
 
 ## Variables
 See [defaults](defaults/main.yml).
