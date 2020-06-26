@@ -1,24 +1,20 @@
-addons:
-  apt:
-    packages:
-      - docker-ce
+dist: bionic
 
-sudo: required
 language: python
+python: "3.6"
 
 services:
   - docker
 
 install:
-  - pip install tox
+  - pip install tox==3.*
 
 env:
-  - TOX_ENV: py27-ansible25
-  - TOX_ENV: py27-ansible26
-  - TOX_ENV: py27-ansible27
+  - TOX_ENV: ansible28
+  - TOX_ENV: ansible29
 
 script:
-  - tox -e ${TOX_ENV}
+  - tox --workdir $(mktemp -d) -e ${TOX_ENV}
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

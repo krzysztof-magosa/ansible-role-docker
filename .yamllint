@@ -2,17 +2,16 @@
 
 extends: default
 
+ignore: |
+  .tox/
+
 rules:
   braces:
     min-spaces-inside: 0
     max-spaces-inside: 0
-    min-spaces-inside-empty: 0
-    max-spaces-inside-empty: 0
   brackets:
     min-spaces-inside: 0
     max-spaces-inside: 0
-    min-spaces-inside-empty: 0
-    max-spaces-inside-empty: 0
   colons:
     max-spaces-before: 0
     max-spaces-after: 1
@@ -38,10 +37,10 @@ rules:
     spaces: 2
     indent-sequences: true
     check-multi-line-strings: true
-  key-duplicates: enable
+  key-duplicates: {}
   line-length: disable
   new-line-at-end-of-file: {}
   new-lines:
     type: unix
-  trailing-spaces: enable
-  truthy: disable
+  trailing-spaces: {}
+  truthy: {}

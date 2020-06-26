@@ -7,11 +7,11 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - stretch
+        - stretch # 9
+        - buster  # 10
     - name: Ubuntu
       versions:
-        - bionic
-        - buster
+        - bionic  # 18.04
     - name: EL
       versions:
         - 7

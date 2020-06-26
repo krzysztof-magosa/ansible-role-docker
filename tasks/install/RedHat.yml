@@ -10,3 +10,4 @@
     name:
       - "{{ docker_pkg }}{% if docker_version %}-{{ docker_version }}{% endif %}"
       - python-virtualenv
+      - gcc # to satisfy subprocess32
